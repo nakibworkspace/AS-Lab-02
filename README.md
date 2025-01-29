@@ -29,7 +29,7 @@ In Spark, the main purpose of partitioning data is to achieve maximum parallelis
 
 Partitions can be a group of rows or subset of DataFrame. Transformation on data partitions are known as task. Each task takes place on one spark core.
 
-![The rows of the DataFrame are divided into four partitions and are dedicatedly working on different cores of the Executors. ](Apache%20Spark%20for%20Data%20Partitioning%20175d4718bce880ec9c0ae134a3067c74/spark1.drawio.svg)
+![The rows of the DataFrame are divided into four partitions and are dedicatedly working on different cores of the Executors. ](images/image01.svg)
 
 The rows of the DataFrame are divided into four partitions and are dedicatedly working on different cores of the Executors. 
 
@@ -101,7 +101,7 @@ Partitions= Data Size (mb)/ 128 mb
 
 Process of redistributing the data across different partitions in a Spark RDD or DataFrame. It comes handy when we are performing queries which needs joining in the datasets.
 
-![The Original DataFrame was divided into 3 partitions and then repartitioned into 4 where the elements were shuffled randomly to fit into partitions.](Apache%20Spark%20for%20Data%20Partitioning%20175d4718bce880ec9c0ae134a3067c74/repartition.drawio-3.svg)
+![The Original DataFrame was divided into 3 partitions and then repartitioned into 4 where the elements were shuffled randomly to fit into partitions.](images/image02.svg)
 
 The Original DataFrame was divided into 3 partitions and then repartitioned into 4 where the elements were shuffled randomly to fit into partitions.
 
@@ -135,7 +135,7 @@ Partition 3: [Row(car='benz', count=2), Row(car='nissan', count=6)]
 
 basically reducing the partitions to smaller number. Useful when there is too many small partitions present.
 
-![The main DataFrame was initially one partitioned which was then partitioned into 4 and by using coalesce, the partitions were reduced to two.](Apache%20Spark%20for%20Data%20Partitioning%20175d4718bce880ec9c0ae134a3067c74/coalescence.drawio.svg)
+![The main DataFrame was initially one partitioned which was then partitioned into 4 and by using coalesce, the partitions were reduced to two.](images/image03.svg)
 
 The main DataFrame was initially one partitioned which was then partitioned into 4 and by using coalesce, the partitions were reduced to two.
 
